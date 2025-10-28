@@ -8,95 +8,86 @@ import nestleImg from '../../assets/img/rodape/Patrocinadores/nestle.png';
 import borgImg from '../../assets/img/rodape/Patrocinadores/borg.png';
 import cimedImg from '../../assets/img/rodape/Patrocinadores/cimed.png';
 
+const patrocinadores = [
+  { name: 'Neo Química', url: 'https://www.neoquimica.com.br', img: neoQuimicaImg },
+  { name: 'Pampers', url: 'https://www.pampers.com.br', img: pampersImg },
+  { name: 'Unilever', url: 'https://www.unilever.com.br', img: unileverImg },
+  { name: 'Nivea', url: 'https://www.nivea.com.br', img: niveaImg },
+  { name: 'Zeta', url: 'https://www.instagram.com/zetaskin/', img: zetaImg },
+  { name: 'Kenvue', url: 'https://www.kenvue.com/pt-br/', img: kenvueImg },
+  { name: 'Nestlé', url: 'https://www.nestle.com.br', img: nestleImg },
+  { name: 'Borg', url: 'https://borgsaude.com.br/', img: borgImg },
+  { name: 'Cimed', url: 'https://cimedremedios.com.br/', img: cimedImg },
+];
+
 export function Rodape() {
   return (
-    <>
-      <section>
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="text-2xl font-semibold text-gray-800" style={{ marginBottom: '40px' }}>
-            Marcas <strong>Queridinhas</strong>
+    <footer className="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 border-t border-gray-200 dark:border-gray-700">
+      {/* Seção de Patrocinadores */}
+      <section className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700" style={{ paddingTop: '30px', paddingBottom: '30px' }}>
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white" style={{ marginBottom: '20px' }}>
+            Nossos <span className="text-yellow-500">Parceiros</span>
           </h2>
-
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            <a href="https://www.neoquimica.com.br" target="_blank" rel="noopener noreferrer">
-              <div className="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center hover:bg-purple-300 transition-colors cursor-pointer">
-                <img src={neoQuimicaImg} alt="Neo Química" className="w-16 h-16 object-contain" />
-              </div>
-            </a>
-
-            <a href="https://www.pampers.com.br" target="_blank" rel="noopener noreferrer">
-              <div className="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center hover:bg-purple-300 transition-colors cursor-pointer">
-                <img src={pampersImg} alt="Pampers" className="w-16 h-16 object-contain" />
-              </div>
-            </a>
-
-            <a href="https://www.unilever.com.br" target="_blank" rel="noopener noreferrer">
-              <div className="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center hover:bg-purple-300 transition-colors cursor-pointer">
-                <img src={unileverImg} alt="Unilever" className="w-16 h-16 object-contain" />
-              </div>
-            </a>
-
-            <a href="https://www.nivea.com.br" target="_blank" rel="noopener noreferrer">
-              <div className="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center hover:bg-purple-300 transition-colors cursor-pointer">
-                <img src={niveaImg} alt="Nivea" className="w-16 h-16 object-contain" />
-              </div>
-            </a>
-
-            <a href="https://www.instagram.com/zetaskin/" target="_blank" rel="noopener noreferrer">
-              <div className="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center hover:bg-purple-300 transition-colors cursor-pointer">
-                <img src={zetaImg} alt="Zeta" className="w-16 h-16 object-contain" />
-              </div>
-            </a>
-
-            <a href="https://www.kenvue.com/pt-br/" target="_blank" rel="noopener noreferrer">
-              <div className="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center hover:bg-purple-300 transition-colors cursor-pointer">
-                <img src={kenvueImg} alt="Kenvue" className="w-16 h-16 object-contain" />
-              </div>
-            </a>
-
-            <a href="https://www.nestle.com.br" target="_blank" rel="noopener noreferrer">
-              <div className="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center hover:bg-purple-300 transition-colors cursor-pointer">
-                <img src={nestleImg} alt="Nestlé" className="w-16 h-16 object-contain" />
-              </div>
-            </a>
-
-            <a href="https://borgsaude.com.br/" target="_blank" rel="noopener noreferrer">
-              <div className="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center hover:bg-purple-300 transition-colors cursor-pointer">
-                <img src={borgImg} alt="Borg" className="w-16 h-16 object-contain" />
-              </div>
-            </a>
-
-            <a href="https://cimedremedios.com.br/" target="_blank" rel="noopener noreferrer">
-              <div className="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center hover:bg-purple-300 transition-colors cursor-pointer">
-                <img src={cimedImg} alt="Cimed" className="w-16 h-16 object-contain" />
-              </div>
-            </a>
+          
+          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-6 items-center justify-items-center">
+            {patrocinadores.map((patrocinador, index) => (
+              <a
+                key={index}
+                href={patrocinador.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group transition-all duration-300 hover:scale-110"
+              >
+                <div className="w-24 h-24 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-md hover:shadow-xl transition-all duration-300 border-2 border-gray-100 dark:border-gray-700 group-hover:border-yellow-400">
+                  <img
+                    src={patrocinador.img}
+                    alt={patrocinador.name}
+                    className="w-16 h-16 object-contain"
+                  />
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
 
-      <footer className="bg-white rounded-lg shadow-sm m-4 dark:bg-gray-900 h-32 flex items-center justify-between">
-        <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2023 <a href="#" className="hover:underline">Preguiça S/A</a>. All Rights Reserved.
-          </span>
+      {/* Seção de Informações do Rodapé */}
+      <div style={{ paddingTop: '10px', paddingBottom: '10px' }}>
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-4">
+            {/* Links de navegação */}
+            <nav className="flex flex-wrap justify-center gap-6">
+              <a href="#sobre" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                Sobre
+              </a>
+              <a href="#politica" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                Política de Privacidade
+              </a>
+              <a href="#termos" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                Termos de Uso
+              </a>
+              <a href="#contato" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                Contato
+              </a>
+            </nav>
 
-          <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 gap-20">
-            <li>
-              <a href="#" className="hover:underline me-4 md:me-6">About</a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline me-4 md:me-6">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline me-4 md:me-6">Licensing</a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">Contact</a>
-            </li>
-          </ul>
+            {/* Copyright */}
+            <div className="text-center">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                © {new Date().getFullYear()} <span className="font-semibold text-blue-600 dark:text-blue-400">Sistema Flow</span>. Todos os direitos reservados.
+              </p>
+            </div>
+          </div>
+
+          {/* Informações adicionais */}
+          <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <p className="text-xs text-center text-gray-500 dark:text-gray-500">
+              Sistema Flow - A sua farmácia digital de confiança.
+            </p>
+          </div>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 }
