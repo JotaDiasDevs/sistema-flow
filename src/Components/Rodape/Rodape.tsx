@@ -23,14 +23,13 @@ const patrocinadores = [
 export function Rodape() {
   return (
     <footer className="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 border-t border-gray-200 dark:border-gray-700">
-      {/* Seção de Patrocinadores */}
-      <section className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700" style={{ paddingTop: '30px', paddingBottom: '30px' }}>
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white" style={{ marginBottom: '20px' }}>
+      <section className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700" style={{ paddingTop: '15px', paddingBottom: '15px' }}>
+        <div className="flex flex-col items-center px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white" style={{ marginBottom: '10px' }}>
             Nossos <span className="text-yellow-500">Parceiros</span>
           </h2>
           
-          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-6 items-center justify-items-center">
+          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-6 items-center justify-items-center w-full" style={{ maxWidth: '1200px' }}>
             {patrocinadores.map((patrocinador, index) => (
               <a
                 key={index}
@@ -52,9 +51,9 @@ export function Rodape() {
         </div>
       </section>
 
-      {/* Seção de Informações do Rodapé */}
+      
       <div style={{ paddingTop: '10px', paddingBottom: '10px' }}>
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full flex justify-center px-4">
           <div className="flex flex-col items-center gap-4">
             {/* Links de navegação */}
             <nav className="flex flex-wrap justify-center gap-6">
@@ -72,7 +71,7 @@ export function Rodape() {
               </a>
             </nav>
 
-            {/* Copyright */}
+            
             <div className="text-center">
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 © {new Date().getFullYear()} <span className="font-semibold text-blue-600 dark:text-blue-400">Sistema Flow</span>. Todos os direitos reservados.
@@ -80,12 +79,6 @@ export function Rodape() {
             </div>
           </div>
 
-          {/* Informações adicionais */}
-          <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <p className="text-xs text-center text-gray-500 dark:text-gray-500">
-              Sistema Flow - A sua farmácia digital de confiança.
-            </p>
-          </div>
         </div>
       </div>
     </footer>
